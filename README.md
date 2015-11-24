@@ -16,6 +16,7 @@ To run this quickstart, you'll need:
 
 ## Step 2: Setup the project
  - In your working directory, run the following commands to create a new project structure:
+
     **mvn archetype:generate -DgroupId=com.cv -DartifactId=ApiUser -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false**
 
    This will create the project named ApiUser
