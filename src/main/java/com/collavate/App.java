@@ -1,4 +1,4 @@
-package com.cv;
+package com.collavate;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -22,7 +22,7 @@ import org.json.JSONObject;
 
 public class App 
 {
-	
+    
 	public static final String AUTH_URL = "https://accounts.google.com/o/oauth2/auth" ;
 	public static final String OAUTH_TOKEN_URL = "https://accounts.google.com/o/oauth2/token" ;
 	
@@ -55,6 +55,13 @@ public class App
 		//getSharedTemplates();
 	}
 	
+   /**
+   * Get shared templates for the account
+   *
+   * <p>
+   * Prints the metadata for shared templates.
+   * <p>
+   */
 	public static void getSharedTemplates() throws Exception{
 
 		String accessToken=getAccessToken();
@@ -71,6 +78,13 @@ public class App
 	
 	}
 	
+	/**
+	* Get templates created by account owner
+	*
+	* <p> 
+	* Prints the metadata for the templates created by account owner.
+	* <p>
+	*/
 	public static void getOwnTemplates() throws Exception{
 
 		String accessToken=getAccessToken();
@@ -87,6 +101,14 @@ public class App
 	
 	}
 	
+	
+	/**
+	* Get references for the current account
+	*
+	* <p> 
+	* Prints the metadata for the references for the current account.
+	* <p>
+	*/
 	public static void getReferences() throws Exception{
 
 		String accessToken=getAccessToken();
@@ -103,6 +125,14 @@ public class App
 	
 	}
 	
+	
+	/**
+	* Get rejected processes shared with the current account
+	*
+	* <p> 
+	* Prints the metadata for the rejected processes shared with the current account.
+	* <p>
+	*/
 	public static void getInboxRejectedDocs() throws Exception{
 
 		String accessToken=getAccessToken();
@@ -119,6 +149,13 @@ public class App
 	
 	}
 	
+	/**
+	* Get processes with status to be reviewed for the current account
+	*
+	* <p> 
+	* Prints the metadata for the processes with status to be reviewed for the current account.
+	* <p>
+	*/
 	public static void getInboxToBeReviewedDocs() throws Exception{
 
 		String accessToken=getAccessToken();
@@ -135,7 +172,15 @@ public class App
 	
 	}
 	
-	
+	/**
+	* Get template for the given template id
+	*
+	* @param templateId id generated for the template
+	* 
+	* <p> 
+	* Prints metadata of the template for the given template id.
+	* <p>
+	*/
 	public static void getTemplateDoc(String templateId) throws Exception{
 
 		String accessToken=getAccessToken();
@@ -152,6 +197,15 @@ public class App
 	
 	}
 	
+	/**
+	* Get process for the given process id
+	*
+	* @param processId id generated for the process
+	* 
+	* <p> 
+	* Prints metadata of the process for the given process id.
+	* <p>
+	*/
 	public static void getProcessDoc(String processId) throws Exception{
 
 		String accessToken=getAccessToken();
@@ -168,6 +222,15 @@ public class App
 	
 	}
 	
+	/**
+	* Rejects process for the given process id
+	*
+	* @param processId id generated for the process
+	* 
+	* <p> 
+	* Rejects process for the given process id and prints its metadata.
+	* <p>
+	*/
 	public static void rejectDoc(String processId) throws Exception{
 
 		String accessToken=getAccessToken();
@@ -185,6 +248,15 @@ public class App
 	
 	}
 	
+	/**
+	* Approve process for the given process id
+	*
+	* @param processId id generated for the process
+	* 
+	* <p> 
+	* Approve process for the given process id and prints its metadata.
+	* <p>
+	*/
 	public static void approveDoc(String processId) throws Exception{
 
 		String accessToken=getAccessToken();
@@ -202,6 +274,15 @@ public class App
 	
 	}
 	
+	/**
+	* Delete process (Drafts only) for the given process id
+	*
+	* @param processId id generated for the process
+	* 
+	* <p> 
+	* Deletes process (Drafts only) for the given process id and prints its metadata.
+	* <p>
+	*/
 	public static void deleteDraft(String processId) throws Exception{
 
 		String accessToken=getAccessToken();
@@ -219,6 +300,15 @@ public class App
 	
 	}
 	
+	/**
+	* Reset process for the given process id
+	*
+	* @param processId id generated for the process
+	* 
+	* <p> 
+	* Reset process for the given process id and prints its metadata.
+	* <p>
+	*/
 	public static void resetDoc(String processId) throws Exception{
 
 		String accessToken=getAccessToken();
@@ -236,6 +326,13 @@ public class App
 	
 	}
 	
+	/**
+	* Get processes created by the account owner
+	*
+	* <p> 
+	* Prints metadata for the processes created by the account owner.
+	* <p>
+	*/
 	public static void getMyProcessDocs() throws Exception{
 
 		String accessToken=getAccessToken();
@@ -252,6 +349,13 @@ public class App
 	
 	}
 	
+	/**
+	* Get submitted processes
+	*
+	* <p> 
+	* Prints metadata for the submitted processes.
+	* <p>
+	*/
 	public static void getSubmittedDocs() throws Exception{
 
 		String accessToken=getAccessToken();
@@ -268,6 +372,13 @@ public class App
 	
 	}
 	
+	/**
+	* Get drafted processes
+	*
+	* <p> 
+	* Prints metadata for the drafted processes.
+	* <p>
+	*/
 	public static void getDraftedDocs() throws Exception{
 
 		String accessToken=getAccessToken();
@@ -284,6 +395,13 @@ public class App
 	
 	}
 	
+	/**
+	* Get rejected processes owned by account owner
+	*
+	* <p> 
+	* Prints metadata for the rejected processes owned by account owner.
+	* <p>
+	*/
 	public static void getRejectedDocs() throws Exception{
 
 		String accessToken=getAccessToken();
@@ -300,6 +418,13 @@ public class App
 	
 	}
 	
+	/**
+	* Get in-progress processes shared with account owner
+	*
+	* <p> 
+	* Prints metadata for the in-progress processes shared with account owner.
+	* <p>
+	*/
 	public static void getInProgressDocs() throws Exception{
 
 		String accessToken=getAccessToken();
@@ -316,6 +441,13 @@ public class App
 	
 	}
 	
+	/**
+	* Get approved processes shared with account owner
+	*
+	* <p> 
+	* Prints metadata for the approved processes shared with account owner.
+	* <p>
+	*/
 	public static void getInboxApprovedDocs() throws Exception{
 
 		String accessToken=getAccessToken();
@@ -332,6 +464,13 @@ public class App
 	
 	}
 	
+	/**
+	* Get approved processes owned by account owner
+	*
+	* <p> 
+	* Prints metadata for the approved processes owned by account owner.
+	* <p>
+	*/
 	public static void getApprovedDocs() throws Exception{
 
 		String accessToken=getAccessToken();
@@ -347,6 +486,7 @@ public class App
 		System.out.println("result = "+getResultString(response.getEntity().getContent()));
 	
 	}
+	
 	
 	private static String getAccessToken() throws Exception{
 		HttpClient client = HttpClientBuilder.create().build();
@@ -368,7 +508,7 @@ public class App
 
     	HttpResponse response = client.execute(post);
     	JSONObject jsonObject=new JSONObject(getResultString(response.getEntity().getContent()));
-       	return jsonObject.get("access_token").toString();
+    	return jsonObject.get("access_token").toString();
 	}
 	
 	
