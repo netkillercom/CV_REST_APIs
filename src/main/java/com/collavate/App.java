@@ -20,8 +20,7 @@ import org.apache.http.impl.client.HttpClientBuilder;
 import org.apache.http.message.BasicNameValuePair;
 import org.json.JSONObject;
 
-public class App 
-{
+public class App{
     
 	public static final String AUTH_URL = "https://accounts.google.com/o/oauth2/auth" ;
 	public static final String OAUTH_TOKEN_URL = "https://accounts.google.com/o/oauth2/token" ;
@@ -34,7 +33,6 @@ public class App
 	
 	
 	public static void main(String[] args) throws Exception {
-		
 		getMyProcessDocs();
 		//deleteDraft("9jLu339OT8WaKs6R2nGm0w");
 		//approveDoc("Fo2VjkVoRrGCeytBk7cvcw");
@@ -62,8 +60,7 @@ public class App
    * Prints the metadata for shared templates.
    * <p>
    */
-	public static void getSharedTemplates() throws Exception{
-
+   public static void getSharedTemplates() throws Exception{
 		String accessToken=getAccessToken();
 		HttpClient client = HttpClientBuilder.create().build();
 		String url="https://netkiller-cea.appspot.com/_ah/api/templates/v2/shared/";
@@ -75,7 +72,6 @@ public class App
                 + response.getStatusLine().getStatusCode());
 
 		System.out.println("result = "+getResultString(response.getEntity().getContent()));
-	
 	}
 	
 	/**
@@ -86,7 +82,6 @@ public class App
 	* <p>
 	*/
 	public static void getOwnTemplates() throws Exception{
-
 		String accessToken=getAccessToken();
 		HttpClient client = HttpClientBuilder.create().build();
 		String url="https://netkiller-cea.appspot.com/_ah/api/templates/v2/owned/";
@@ -98,9 +93,7 @@ public class App
                 + response.getStatusLine().getStatusCode());
 
 		System.out.println("result = "+getResultString(response.getEntity().getContent()));
-	
 	}
-	
 	
 	/**
 	* Get references for the current account
@@ -110,7 +103,6 @@ public class App
 	* <p>
 	*/
 	public static void getReferences() throws Exception{
-
 		String accessToken=getAccessToken();
 		HttpClient client = HttpClientBuilder.create().build();
 		String url="https://netkiller-cea.appspot.com/_ah/api/collavate/v2/shared/references";
@@ -122,9 +114,7 @@ public class App
                 + response.getStatusLine().getStatusCode());
 
 		System.out.println("result = "+getResultString(response.getEntity().getContent()));
-	
 	}
-	
 	
 	/**
 	* Get rejected processes shared with the current account
@@ -134,7 +124,6 @@ public class App
 	* <p>
 	*/
 	public static void getInboxRejectedDocs() throws Exception{
-
 		String accessToken=getAccessToken();
 		HttpClient client = HttpClientBuilder.create().build();
 		String url="https://netkiller-cea.appspot.com/_ah/api/collavate/v2/shared/rejected";
@@ -146,7 +135,6 @@ public class App
                 + response.getStatusLine().getStatusCode());
 
 		System.out.println("result = "+getResultString(response.getEntity().getContent()));
-	
 	}
 	
 	/**
@@ -157,7 +145,6 @@ public class App
 	* <p>
 	*/
 	public static void getInboxToBeReviewedDocs() throws Exception{
-
 		String accessToken=getAccessToken();
 		HttpClient client = HttpClientBuilder.create().build();
 		String url="https://netkiller-cea.appspot.com/_ah/api/collavate/v2/shared/to-be-reviewed";
@@ -169,7 +156,6 @@ public class App
                 + response.getStatusLine().getStatusCode());
 
 		System.out.println("result = "+getResultString(response.getEntity().getContent()));
-	
 	}
 	
 	/**
@@ -182,7 +168,6 @@ public class App
 	* <p>
 	*/
 	public static void getTemplateDoc(String templateId) throws Exception{
-
 		String accessToken=getAccessToken();
 		HttpClient client = HttpClientBuilder.create().build();
 		String url="https://netkiller-cea.appspot.com/_ah/api/templates/v2/"+templateId;
@@ -194,7 +179,6 @@ public class App
                 + response.getStatusLine().getStatusCode());
 
 		System.out.println("result = "+getResultString(response.getEntity().getContent()));
-	
 	}
 	
 	/**
@@ -207,7 +191,6 @@ public class App
 	* <p>
 	*/
 	public static void getProcessDoc(String processId) throws Exception{
-
 		String accessToken=getAccessToken();
 		HttpClient client = HttpClientBuilder.create().build();
 		String url="https://netkiller-cea.appspot.com/_ah/api/collavate/v2/"+processId;
@@ -219,7 +202,6 @@ public class App
                 + response.getStatusLine().getStatusCode());
 
 		System.out.println("result = "+getResultString(response.getEntity().getContent()));
-	
 	}
 	
 	/**
@@ -232,7 +214,6 @@ public class App
 	* <p>
 	*/
 	public static void rejectDoc(String processId) throws Exception{
-
 		String accessToken=getAccessToken();
 		HttpClient client = HttpClientBuilder.create().build();
 		String url="https://netkiller-cea.appspot.com/_ah/api/collavate/v2/"+processId+"/reject-or-disagree";
@@ -245,7 +226,6 @@ public class App
                 + response.getStatusLine().getStatusCode());
 
 		System.out.println("result = "+getResultString(response.getEntity().getContent()));
-	
 	}
 	
 	/**
@@ -258,7 +238,6 @@ public class App
 	* <p>
 	*/
 	public static void approveDoc(String processId) throws Exception{
-
 		String accessToken=getAccessToken();
 		HttpClient client = HttpClientBuilder.create().build();
 		String url="https://netkiller-cea.appspot.com/_ah/api/collavate/v2/"+processId+"/approve-or-agree";
@@ -271,7 +250,6 @@ public class App
                 + response.getStatusLine().getStatusCode());
 
 		System.out.println("result = "+getResultString(response.getEntity().getContent()));
-	
 	}
 	
 	/**
@@ -284,7 +262,6 @@ public class App
 	* <p>
 	*/
 	public static void deleteDraft(String processId) throws Exception{
-
 		String accessToken=getAccessToken();
 		HttpClient client = HttpClientBuilder.create().build();
 		String url="https://netkiller-cea.appspot.com/_ah/api/collavate/v2/"+processId;
@@ -297,7 +274,6 @@ public class App
                 + response.getStatusLine().getStatusCode());
 
 		System.out.println("result = "+getResultString(response.getEntity().getContent()));
-	
 	}
 	
 	/**
@@ -310,7 +286,6 @@ public class App
 	* <p>
 	*/
 	public static void resetDoc(String processId) throws Exception{
-
 		String accessToken=getAccessToken();
 		HttpClient client = HttpClientBuilder.create().build();
 		String url="https://netkiller-cea.appspot.com/_ah/api/collavate/v2/"+processId+"/reset?comment=test";
@@ -323,7 +298,6 @@ public class App
                 + response.getStatusLine().getStatusCode());
 
 		System.out.println("result = "+getResultString(response.getEntity().getContent()));
-	
 	}
 	
 	/**
@@ -334,7 +308,6 @@ public class App
 	* <p>
 	*/
 	public static void getMyProcessDocs() throws Exception{
-
 		String accessToken=getAccessToken();
 		HttpClient client = HttpClientBuilder.create().build();
 		String url="https://netkiller-cea.appspot.com/_ah/api/collavate/v2/owned";
@@ -346,7 +319,6 @@ public class App
                 + response.getStatusLine().getStatusCode());
 
 		System.out.println("result = "+getResultString(response.getEntity().getContent()));
-	
 	}
 	
 	/**
@@ -357,7 +329,6 @@ public class App
 	* <p>
 	*/
 	public static void getSubmittedDocs() throws Exception{
-
 		String accessToken=getAccessToken();
 		HttpClient client = HttpClientBuilder.create().build();
 		String url="https://netkiller-cea.appspot.com/_ah/api/collavate/v2/owned/submitted";
@@ -369,7 +340,6 @@ public class App
                 + response.getStatusLine().getStatusCode());
 
 		System.out.println("result = "+getResultString(response.getEntity().getContent()));
-	
 	}
 	
 	/**
@@ -380,7 +350,6 @@ public class App
 	* <p>
 	*/
 	public static void getDraftedDocs() throws Exception{
-
 		String accessToken=getAccessToken();
 		HttpClient client = HttpClientBuilder.create().build();
 		String url="https://netkiller-cea.appspot.com/_ah/api/collavate/v2/owned/draft";
@@ -392,7 +361,6 @@ public class App
                 + response.getStatusLine().getStatusCode());
 
 		System.out.println("result = "+getResultString(response.getEntity().getContent()));
-	
 	}
 	
 	/**
@@ -403,7 +371,6 @@ public class App
 	* <p>
 	*/
 	public static void getRejectedDocs() throws Exception{
-
 		String accessToken=getAccessToken();
 		HttpClient client = HttpClientBuilder.create().build();
 		String url="https://netkiller-cea.appspot.com/_ah/api/collavate/v2/owned/rejected";
@@ -415,7 +382,6 @@ public class App
                 + response.getStatusLine().getStatusCode());
 
 		System.out.println("result = "+getResultString(response.getEntity().getContent()));
-	
 	}
 	
 	/**
@@ -426,7 +392,6 @@ public class App
 	* <p>
 	*/
 	public static void getInProgressDocs() throws Exception{
-
 		String accessToken=getAccessToken();
 		HttpClient client = HttpClientBuilder.create().build();
 		String url="https://netkiller-cea.appspot.com/_ah/api/collavate/v2/shared/in-progress";
@@ -438,7 +403,6 @@ public class App
                 + response.getStatusLine().getStatusCode());
 
 		System.out.println("result = "+getResultString(response.getEntity().getContent()));
-	
 	}
 	
 	/**
@@ -449,7 +413,6 @@ public class App
 	* <p>
 	*/
 	public static void getInboxApprovedDocs() throws Exception{
-
 		String accessToken=getAccessToken();
 		HttpClient client = HttpClientBuilder.create().build();
 		String url="https://netkiller-cea.appspot.com/_ah/api/collavate/v2/shared/approved";
@@ -461,7 +424,6 @@ public class App
                 + response.getStatusLine().getStatusCode());
 
 		System.out.println("result = "+getResultString(response.getEntity().getContent()));
-	
 	}
 	
 	/**
@@ -472,7 +434,6 @@ public class App
 	* <p>
 	*/
 	public static void getApprovedDocs() throws Exception{
-
 		String accessToken=getAccessToken();
 		HttpClient client = HttpClientBuilder.create().build();
 		String url="https://netkiller-cea.appspot.com/_ah/api/collavate/v2/owned/approved";
@@ -484,9 +445,7 @@ public class App
                 + response.getStatusLine().getStatusCode());
 
 		System.out.println("result = "+getResultString(response.getEntity().getContent()));
-	
 	}
-	
 	
 	private static String getAccessToken() throws Exception{
 		HttpClient client = HttpClientBuilder.create().build();
@@ -510,7 +469,6 @@ public class App
     	JSONObject jsonObject=new JSONObject(getResultString(response.getEntity().getContent()));
     	return jsonObject.get("access_token").toString();
 	}
-	
 	
 	private static String getResultString(InputStream in) throws IOException{
 		BufferedReader rd = new BufferedReader(
