@@ -47,6 +47,7 @@ As the sample will run, it will print the AuthUrl on console
  - If you are not already logged into your Google account, you will be prompted to log in. If you are logged into multiple Google accounts, you will be asked to select one account to use for the authorization.
  - Click the Accept button.
  - It will redirect you to google page with parameter ‘code’, copy the value of this parameter ‘code’ and paste it to the console.
+ - Then enter the method name you want to execute from the code, it’ll ask you the parameter if required.
  - You will get the response of the api. 
 
 
