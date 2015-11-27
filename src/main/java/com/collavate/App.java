@@ -58,6 +58,7 @@ public class App{
    * <p>
    */
    public static void getSharedTemplates() throws Exception{
+		String accessToken=getAccessToken();
 		HttpClient client = HttpClientBuilder.create().build();
 		String url="https://netkiller-cea.appspot.com/_ah/api/templates/v2/shared/";
 		HttpGet request=new HttpGet(url);
