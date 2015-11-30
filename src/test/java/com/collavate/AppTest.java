@@ -1,4 +1,4 @@
-package com.cv;
+package com.collavate;
 
 import junit.framework.Test;
 import junit.framework.TestCase;

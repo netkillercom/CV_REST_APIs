@@ -17,7 +17,7 @@ To run this quickstart, you'll need:
 ## Step 2: Setup the project
  - In your working directory, run the following commands to create a new project structure:
 
-    **mvn archetype:generate -DgroupId=com.cv -DartifactId=ApiUser -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false**
+    **mvn archetype:generate -DgroupId=com.collavate -DartifactId=ApiUser -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false**
 
    This will create the project named ApiUser
 
@@ -25,7 +25,7 @@ To run this quickstart, you'll need:
 	
 	[pom.xml](https://drive.google.com/a/nicefact.com/file/d/0B9NWQND1ujwcTzRCeHdINkNpNFE/view)
 
- - replace the contents of ApiUser/src/main/java/com/cv/App.java with following : 
+ - replace the contents of ApiUser/src/main/java/com/collavate/App.java with following : 
 
 	[App.java](https://drive.google.com/a/nicefact.com/file/d/0B9NWQND1ujwcRkJnTWZKeGR5QWs/view)
 
@@ -40,13 +40,14 @@ To run this quickstart, you'll need:
 ## Step 3: Run the sample
 Build and run the quickstart with the command:
 
-**java -cp target\ApiUser-1.0-SNAPSHOT-jar-with-dependencies.jar com.cv.App**
+**java -cp target\ApiUser-1.0-SNAPSHOT-jar-with-dependencies.jar com.collavate.App**
 
 As the sample will run, it will print the AuthUrl on console
  - Copy the URL from the console and manually open it in your browser.
  - If you are not already logged into your Google account, you will be prompted to log in. If you are logged into multiple Google accounts, you will be asked to select one account to use for the authorization.
  - Click the Accept button.
  - It will redirect you to google page with parameter ‘code’, copy the value of this parameter ‘code’ and paste it to the console.
+ - Then enter the method name you want to execute from the code, it’ll ask you the parameter if required.
  - You will get the response of the api. 
 
 
