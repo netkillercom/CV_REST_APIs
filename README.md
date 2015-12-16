@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Collavate-REST-API
 
 ## Prerequisites
@@ -57,3 +58,7 @@ As the sample will run, it will print the AuthUrl on console
  - The authorization flow in this example is designed for a command-line application. For information on how to perform authorization in a web application, see Using OAuth 2.0 for Web Server Applications.
 
 
+=======
+# CV_Sample_APIs
+CP Sample Apis
+>>>>>>> origin/master
